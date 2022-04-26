@@ -21,7 +21,10 @@
   .font-2-s {
     font: 200 .8rem/1.14 'Raleway';
   }
+}
+
+@media (max-width: 400px) {
   .font-1-p {
-    font: 400 .6rem/1.14 'Poppins';
+    font: 400 .4rem/1.14 'Poppins';
   }
 }
