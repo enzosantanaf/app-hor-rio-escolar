@@ -1,0 +1,144 @@
+/* variáveis */
+:root {
+  --padding-container: 40px;
+  --padding-item: 20px;
+  --border-item: 4px solid var(--cor-4);
+}
+
+body {
+  background-color: var(--cor-6);
+  margin: 0;
+}
+
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* header */
+header {
+  background-color: var(--cor-3);
+  padding: var(--padding-container);
+  border-radius: 0% 0% 28% 2%;
+}
+
+header h1 {
+  margin-top: 50px;
+}
+
+/* conteúdo principal */
+main {
+  max-width: 500px;
+  padding: var(--padding-container);
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+main ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+main ul li {
+  padding: var(--padding-item);
+  border: 4px solid var(--cor-4);
+  border-radius: 12px;
+}
+
+main ul li h4 {
+  max-width: max-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--cor-5);
+}
+
+main ul li div {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+main ul li p {
+  max-width: max-content;
+}
+
+p.livro {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* horário do dia (rodapé) */
+section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--padding-container);
+  text-align: center;
+}
+
+.section {
+  border: 4px solid var(--cor-4);
+  border-radius: 12px;
+  padding: var(--padding-item) 4px;
+}
+
+.section h4 {
+  margin: 0 auto;
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--cor-5);
+  max-width: max-content;
+}
+
+.horario-dia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: var(--padding-item) 6px;
+  align-items: center;
+  position: relative;
+
+}
+
+h2 {
+  place-self: center;
+  text-transform: uppercase;
+}
+
+h2::after {
+  content: "";
+  width: 2px;
+  height: 112px;
+  background-color: var(--cor-5);
+  position: absolute;
+  left: 50%;
+  top: -1px;
+}
+
+.horario-dia ul {
+  text-align: left;
+  justify-self: center;
+}
+
+/* responsividade */
+@media (max-width: 500px) {
+  :root {
+    --padding-container: 20px;
+    --padding-item: 12px;
+  }
+  main ul li h4 {
+    text-align: center;
+  }
+  h2::after {
+    height: 92px;
+  }
+}
+
+@media (max-width: 300px) {
+  h2::after {
+    height: 82px;
+  }
+}

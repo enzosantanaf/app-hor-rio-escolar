@@ -1,33 +1,3 @@
-body {
-  font: 14px Arial;
-  background: linear-gradient(to right, #f0f8ff, #f8f8ff);
-}
-
-.btn-0 {
-  font-size: 22px;
-  border: 1px solid #808080;
-  border-radius: 5px;
-  background: linear-gradient(#d3d3d3, #a9a9a9);
-  padding: 1.5rem 3rem;
-}
-
-.btn-0:hover {
-  background: linear-gradient(#dcdcdc, #c0c0c0);
-  cursor: pointer;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.resposta {
-  display: none;
-  font: 20px Arial;
-  text-align: center;
-}
+@import url('/css/global.css');
+@import url('/css/fontes.css');
+@import url('/css/cores.css');

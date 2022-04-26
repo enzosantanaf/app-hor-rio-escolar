@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@200&display=swap');
+
+
+.font-1-m {
+  font: 500 3.2rem/1.14 'Poppins';
+}
+
+.font-1-p {
+  font: 400 .8rem/1.14 'Poppins';
+}
+
+.font-2-s {
+  font: 200 1.2rem/1.14 'Raleway';
+}
+
+/* font-responsive */
+@media (max-width: 500px) {
+  .font-1-m {
+    font: 500 2.4rem/1.14 'Poppins';
+  }
+  .font-2-s {
+    font: 200 .8rem/1.14 'Raleway';
+  }
+}
+
+@media (max-width: 300px) {
+  .font-1-p {
+    font: 400 .675rem/1.14 'Poppins';
+  }
+}
