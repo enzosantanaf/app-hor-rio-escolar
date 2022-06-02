@@ -1,4 +1,4 @@
-var data = new Date()
+let data = new Date()
 /*
 Days
 0 = Domingo
@@ -9,50 +9,14 @@ Days
 5 = Sexta
 6 = Sábado
 */
-
-let aulas = {
-  segunda: {
-    primeiro: 'QUI',
-    segundo: 'ING',
-    terceiro: 'HIST',
-    quarto: 'ING',
-    quinto: 'MAT'
-  },
-  terca: {
-    primeiro: 'PORT',
-    segundo: 'FIS',
-    terceiro: 'RED',
-    quarto: 'RED',
-    quinto: 'QUI'
-  },
-  quarta: {
-    primeiro: 'MAT',
-    segundo: 'SOC',
-    terceiro: 'SOC',
-    quarto: 'MAT',
-    quinto: 'FILO'
-  },
-  quinta: {
-    primeiro: 'HIST',
-    segundo: 'PORT',
-    terceiro: 'PORT',
-    quarto: 'GEO',
-    quinto: 'GEO'
-  },
-  sexta: {
-    primeiro: 'ED.FIS',
-    segundo: 'FILO',
-    terceiro: 'BIO',
-    quarto: 'BIO',
-    quinto: 'FIS'
-  }
-}
-
 const msgSaudacao = document.querySelector('h1')
-const btnConsultar = document.querySelector('.btn-0')
-const resposta = document.querySelector('.resposta')
+const horarioCompleto = document.querySelector('section ul')
+const horarioDia = document.querySelector('section h2')
+const aula = document.querySelector('ul div p.horario')
+const horaAula = document.querySelector('ul div span.hora-aula')
+const livroUsado = document.querySelector('ul .horario .livro')
 
-function saudacao(hora) {
+function saudacao() {
   hora = data.getHours()
   if (hora >= 0 && hora < 12) {
     msgSaudacao.innerHTML = 'Bom Dia!'
@@ -63,30 +27,161 @@ function saudacao(hora) {
   }
 }
 
-function horario(dia) {
+function aulaELivroEmAndamento() {
   dia = data.getDay()
-  btnConsultar.style.display = 'none'
-  resposta.style.display = 'block'
-  switch (dia) {
-    case 1:
-      resposta.innerHTML = `${aulas.segunda.primeiro}</br>${aulas.segunda.segundo}</br>${aulas.segunda.terceiro}</br>${aulas.segunda.quarto}</br>${aulas.segunda.quinto}`
-      break
-    case 2:
-      resposta.innerHTML = `${aulas.terca.primeiro}</br>${aulas.terca.segundo}</br>${aulas.terca.terceiro}</br>${aulas.terca.quarto}</br>${aulas.terca.quinto}`
-      break
-    case 3:
-      resposta.innerHTML = `${aulas.quarta.primeiro}</br>${aulas.quarta.segundo}</br>${aulas.quarta.terceiro}</br>${aulas.quarta.quarto}</br>${aulas.quarta.quinto}`
-      break
-    case 4:
-      resposta.innerHTML = `${aulas.quinta.primeiro}</br>${aulas.quinta.segundo}</br>${aulas.quinta.terceiro}</br>${aulas.quinta.quarto}</br>${aulas.quinta.quinto}`
-      break
-    case 5:
-      resposta.innerHTML = `${aulas.sexta.primeiro}</br>${aulas.sexta.segundo}</br>${aulas.sexta.terceiro}</br>${aulas.sexta.quarto}</br>${aulas.sexta.quinto}`
-      break
-    default:
-      console.log('Não tem aula hoje')
+  hora = data.getHours()
+  if (dia == 1 && hora >= 13 && hora < 14) {
+    horaAula.innerHTML = '1° | '
+    aula.innerHTML = aulas.segunda.primeiro
+    livroUsado.innerHTML = '-'
+  } else if (dia == 1 && hora >= 14 && hora < 15) {
+    horaAula.innerHTML = '2° | '
+    aula.innerHTML = aulas.segunda.segundo
+    livroUsado.innerHTML = livro[3]
+  } else if (dia == 1 && hora >= 15 && hora < 16) {
+    horaAula.innerHTML = '3° | '
+    aula.innerHTML = aulas.segunda.terceiro
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 1 && hora >= 16 && hora < 17) {
+    horaAula.innerHTML = '4° | '
+    aula.innerHTML = aulas.segunda.quarto
+    livroUsado.innerHTML = livro[3]
+  } else if (dia == 1 && hora >= 17 && hora < 18) {
+    horaAula.innerHTML = '5° | '
+    aula.innerHTML = aulas.segunda.quinto
+    livroUsado.innerHTML = livro[2]
+  } else if (dia == 2 && hora >= 13 && hora < 14) {
+    horaAula.innerHTML = '1° | '
+    aula.innerHTML = aulas.terca.primeiro
+    livroUsado.innerHTML = livro[4]
+  } else if (dia == 2 && hora >= 14 && hora < 15) {
+    horaAula.innerHTML = '2° | '
+    aula.innerHTML = aulas.terca.segundo
+    livroUsado.innerHTML = '-'
+  } else if (dia == 2 && hora >= 15 && hora < 16) {
+    horaAula.innerHTML = '3° | '
+    aula.innerHTML = aulas.terca.terceiro
+    livroUsado.innerHTML = '-'
+  } else if (dia == 2 && hora >= 16 && hora < 17) {
+    horaAula.innerHTML = '4° | '
+    aula.innerHTML = aulas.terca.quarto
+    livroUsado.innerHTML = '-'
+  } else if (dia == 2 && hora >= 17 && hora < 18) {
+    horaAula.innerHTML = '5° | '
+    aula.innerHTML = aulas.terca.quinto
+    livroUsado.innerHTML = '-'
+  } else if (dia == 3 && hora >= 13 && hora < 14) {
+    horaAula.innerHTML = '1° | '
+    aula.innerHTML = aulas.quarta.primeiro
+    livroUsado.innerHTML = livro[2]
+  } else if (dia == 3 && hora >= 14 && hora < 15) {
+    horaAula.innerHTML = '2° | '
+    aula.innerHTML = aulas.quarta.segundo
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 3 && hora >= 15 && hora < 16) {
+    horaAula.innerHTML = '3° | '
+    aula.innerHTML = aulas.quarta.terceiro
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 3 && hora >= 16 && hora < 17) {
+    horaAula.innerHTML = '4° | '
+    aula.innerHTML = aulas.quarta.quarto
+    livroUsado.innerHTML = livro[2]
+  } else if (dia == 3 && hora >= 17 && hora < 18) {
+    horaAula.innerHTML = '5° | '
+    aula.innerHTML = aulas.quarta.quinto
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 4 && hora >= 13 && hora < 14) {
+    horaAula.innerHTML = '1° | '
+    aula.innerHTML = aulas.quinta.primeiro
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 4 && hora >= 14 && hora < 15) {
+    horaAula.innerHTML = '2° | '
+    aula.innerHTML = aulas.quinta.segundo
+    livroUsado.innerHTML = livro[4]
+  } else if (dia == 4 && hora >= 15 && hora < 16) {
+    horaAula.innerHTML = '3° | '
+    aula.innerHTML = aulas.quinta.terceiro
+    livroUsado.innerHTML = livro[4]
+  } else if (dia == 4 && hora >= 16 && hora < 17) {
+    horaAula.innerHTML = '4° | '
+    aula.innerHTML = aulas.quinta.quarto
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 4 && hora >= 17 && hora < 18) {
+    horaAula.innerHTML = '5° | '
+    aula.innerHTML = aulas.quinta.quinto
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 5 && hora >= 13 && hora < 14) {
+    horaAula.innerHTML = '1° | '
+    aula.innerHTML = aulas.sexta.primeiro
+    livroUsado.innerHTML = '-'
+  } else if (dia == 5 && hora >= 14 && hora < 15) {
+    horaAula.innerHTML = '2° | '
+    aula.innerHTML = aulas.sexta.segundo
+    livroUsado.innerHTML = livro[1]
+  } else if (dia == 5 && hora >= 15 && hora < 16) {
+    horaAula.innerHTML = '3° | '
+    aula.innerHTML = aulas.sexta.terceiro
+    livroUsado.innerHTML = '-'
+  } else if (dia == 5 && hora >= 16 && hora < 17) {
+    horaAula.innerHTML = '4° | '
+    aula.innerHTML = aulas.sexta.quarto
+    livroUsado.innerHTML = '-'
+  } else if (dia == 5 && hora >= 17 && hora < 18) {
+    horaAula.innerHTML = '5° | '
+    aula.innerHTML = aulas.sexta.quinto
+    livroUsado.innerHTML = '-'
+  } else {
+    horaAula.style.display = 'none'
+    aula.innerHTML = '-'
+    livroUsado.innerHTML = '-'
   }
 }
 
-window.onload = saudacao
-btnConsultar.addEventListener('click', horario)
+function horario(dia) {
+  dia = data.getDay()
+  switch (dia) {
+    case 1:
+      horarioDia.innerHTML = 'SEG'
+      break
+    case 2:
+      horarioDia.innerHTML = 'TER'
+      break
+    case 3:
+      horarioDia.innerHTML = 'QUA'
+      break
+    case 4:
+      horarioDia.innerHTML = 'QUI'
+      break
+    case 5:
+      horarioDia.innerHTML = 'SEX'
+      break
+    default:
+      horarioDia.style.display = 'none'
+  }
+  switch (dia) {
+    case 1:
+      horarioCompleto.innerHTML = `1° | ${aulas.segunda.primeiro}</br>2° | ${aulas.segunda.segundo}</br>3° | ${aulas.segunda.terceiro}</br>4° | ${aulas.segunda.quarto}</br>5° | ${aulas.segunda.quinto}`
+      break
+    case 2:
+      horarioCompleto.innerHTML = `1° | ${aulas.terca.primeiro}</br>2° | ${aulas.terca.segundo}</br>3° | ${aulas.terca.terceiro}</br>4° | ${aulas.terca.quarto}</br>5° | ${aulas.terca.quinto}`
+      break
+    case 3:
+      horarioCompleto.innerHTML = `1° | ${aulas.quarta.primeiro}</br>2° | ${aulas.quarta.segundo}</br>3° | ${aulas.quarta.terceiro}</br>4° | ${aulas.quarta.quarto}</br>5° | ${aulas.quarta.quinto}`
+      break
+    case 4:
+      horarioCompleto.innerHTML = `1° | ${aulas.quinta.primeiro}</br>2° | ${aulas.quinta.segundo}</br>3° | ${aulas.quinta.terceiro}</br>4° | ${aulas.quinta.quarto}</br>5° | ${aulas.quinta.quinto}`
+      break
+    case 5:
+      horarioCompleto.innerHTML = `1° | ${aulas.sexta.primeiro}</br>2° | ${aulas.sexta.segundo}</br>3° | ${aulas.sexta.terceiro}</br>4° | ${aulas.sexta.quarto}</br>5° | ${aulas.sexta.quinto}`
+      break
+    default:
+      const horarioCompletoPai = document.querySelector('div.horario-dia')
+      horarioCompletoPai.style.display = 'block'
+      horarioCompleto.style.textAlign = 'center'
+      horarioCompleto.innerHTML = 'Não tem aula hoje'
+  }
+}
+
+saudacao()
+aulaELivroEmAndamento()
+horario()
