@@ -9,7 +9,9 @@ Days
 5 = Sexta
 6 = Sábado
 */
+const bgHeader = document.querySelector('header')
 const msgSaudacao = document.querySelector('h1')
+const msgSaudacaoSub = document.querySelector('h3')
 const horarioCompleto = document.querySelector('section ul')
 const horarioDia = document.querySelector('section h2')
 const aula = document.querySelector('ul div p.horario')
@@ -22,8 +24,14 @@ function saudacao() {
     msgSaudacao.innerHTML = 'Bom Dia!'
   } else if (hora >= 12 && hora < 18) {
     msgSaudacao.innerHTML = 'Boa Tarde!'
+    msgSaudacao.style.color = 'var(--cor-6)'
+    msgSaudacaoSub.style.color = 'var(--cor-2)'
+    bgHeader.style.backgroundColor = 'var(--cor-4)'
   } else if (hora >= 18) {
     msgSaudacao.innerHTML = 'Boa Noite!'
+    msgSaudacao.style.color = 'var(--cor-6)'
+    msgSaudacaoSub.style.color = 'var(--cor-3)'
+    bgHeader.style.backgroundColor = 'var(--cor-8)'
   }
 }
 
