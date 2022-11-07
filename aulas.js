@@ -1,37 +1,37 @@
 let aulas = {
   segunda: {
-    primeiro: 'Química',
-    segundo: 'Inglês',
-    terceiro: 'História',
-    quarto: 'Inglês',
-    quinto: 'Matemática'
+    primeiro: 'Inglês',
+    segundo: 'História',
+    terceiro: 'Português',
+    quarto: 'Português',
+    quinto: 'Sociologia'
   },
   terca: {
-    primeiro: 'Português',
-    segundo: 'Física',
+    primeiro: 'Redação',
+    segundo: 'Biologia',
     terceiro: 'Redação',
-    quarto: 'Redação',
-    quinto: 'Química'
+    quarto: 'Química',
+    quinto: 'Física'
   },
   quarta: {
-    primeiro: 'Matemática',
-    segundo: 'Sociologia',
-    terceiro: 'Sociologia',
+    primeiro: 'Sociologia',
+    segundo: 'Filosofia',
+    terceiro: 'Matemática',
     quarto: 'Matemática',
-    quinto: 'Filosofia'
+    quinto: 'Biologia'
   },
   quinta: {
-    primeiro: 'História',
-    segundo: 'Português',
+    primeiro: 'Inglês',
+    segundo: 'História',
     terceiro: 'Português',
     quarto: 'Geografia',
     quinto: 'Geografia'
   },
   sexta: {
-    primeiro: 'Ed. Física',
-    segundo: 'Filosofia',
-    terceiro: 'Biologia',
-    quarto: 'Biologia',
-    quinto: 'Física'
+    primeiro: 'Matemática',
+    segundo: 'Ed. Física',
+    terceiro: 'Filosofia',
+    quarto: 'Física',
+    quinto: 'Quimica'
   }
 }
